@@ -297,6 +297,14 @@ unsigned long ToUInt(char* str)
     return re;
 }
 
+void substring1(const char *source, char *dest, size_t start, size_t length) {
+  size_t source_len = strlen(source);
+  if (start > source_len) start = source_len;
+  if (start + length > source_len) length = source_len - start;
+  memmove(dest, &source[start], length);
+  dest[length] = 0;
+}
+
 static void sig_handler(int sigio) {
 	if (sigio == SIGQUIT) {
 		quit_sig = true;;
