@@ -284,6 +284,18 @@ void thread_valid(void);
 
 /* -------------------------------------------------------------------------- */
 /* --- PRIVATE FUNCTIONS DEFINITION ----------------------------------------- */
+unsigned long ToUInt(char* str)
+{
+    unsigned long mult = 1;
+    unsigned long re = 0;
+    int len = strlen(str);
+    for(int i = len -1 ; i >= 0 ; i--)
+    {
+        re = re + ((int)str[i] -48)*mult;
+        mult = mult*10;
+    }
+    return re;
+}
 
 static void sig_handler(int sigio) {
 	if (sigio == SIGQUIT) {
