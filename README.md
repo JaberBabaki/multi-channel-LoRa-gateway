@@ -6,5 +6,10 @@
   </tr>
 </table>
 
-# multi-channel-LoRa-gateway
+# LoRaWAN Outdoor Gateway
 The HethTech outdoor gateway is a ruggedized IoT gateway solution, specifically designed for outdoor LoRa® public or private network deployments. This highly scalable and IP67 solution can operate in the harshest environments including moisture, dust, wind, rain, snow and extreme heat.
+
+The HethTech outdoor gateway is also compatible with AUT-Platform Network solution to deploy standalone and self-operating LoRaWAN private network.
+This IP67 Gateway delivers exceptional LoRaWAN™ coverage in outdoor spaces covering as much as 15+ km line of sight, or up to 5km in rural areas.
+
+Whether for commercial, community or municipal coverage, it delivers un-paralleled coverage with faultless resilience. it allows simple installation and remote (web based) gateway management.
