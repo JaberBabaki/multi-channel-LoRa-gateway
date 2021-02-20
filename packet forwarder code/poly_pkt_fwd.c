@@ -1689,8 +1689,29 @@ void thread_up(void) {
 					j = lgw_cnt2utc(local_ref, p->count_us, &pkt_utc_time);
 					if (j == LGW_GPS_SUCCESS) {
 						/* split the UNIX timestamp to its calendar components */
-						x = gmtime(&(pkt_utc_time.tv_sec));
-						j = snprintf((char *)(buff_up + buff_index), TX_BUFF_SIZE-buff_index, ",\"time\":\"%04i-%02i-%02iT%02i:%02i:%02i.%06liZ\"", (x->tm_year)+1900, (x->tm_mon)+1, x->tm_mday, x->tm_hour, x->tm_min, x->tm_sec, (pkt_utc_time.tv_nsec)/1000); /* ISO 8601 format */
+						//x = gmtime(&(pkt_utc_time.tv_sec));
+						//j = snprintf((char *)(buff_up + buff_index), TX_BUFF_SIZE-buff_index, ",\"time\":\"%04i-%02i-%02iT%02i:%02i:%02i.%06liZ\"", (x->tm_year)+1900, (x->tm_mon)+1, x->tm_mday, x->tm_hour, x->tm_min, x->tm_sec, (pkt_utc_time.tv_nsec)/1000); /* ISO 8601 format */
+												char c[1000];
+						FILE *fptr;
+						fptr = fopen("/sys/class/pps/pps0/assert", "r");
+						fscanf(fptr,"%[^\n]", c);
+						// reads text until newline 
+						MSG("\n%s\n", c);
+						fclose(fptr);
+						
+						char timeL[10];
+						char timeN[10];
+						substring1(c, timeL, 0, 10);	
+						substring1(c, timeN, 11, 9);
+						
+						struct tm *now; 
+						time_t secs;
+						char buffer [80];
+						secs = (time_t)atol(timeL);
+						now = gmtime(&secs);
+						strftime(buffer, 80, "%Y-%m-%d",now);	
+					    j = snprintf((char *)(buff_up + buff_index), TX_BUFF_SIZE-buff_index, ",\"time\":\"%04i-%02i-%02iT%02i:%02i:%02i.%06liZ\"", (now->tm_year)+1900, (now->tm_mon)+1, now->tm_mday, now->tm_hour, now->tm_min, now->tm_sec, (ToUInt(timeN))); /* ISO 8601 format */															
+						
 						if (j > 0) {
 							buff_index += j;
 						} else {
