@@ -1,13 +1,8 @@
 <table style="width:100%">
    <tr>
-    <td><img src="https://github.com/JaberBabaki/LoRa-single-channel-gateway/blob/master/picture/4.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/LoRa-single-channel-gateway/blob/master/picture/4.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/LoRa-single-channel-gateway/blob/master/picture/4.jpg" width="250" height="400" /></td>
-  </tr>
-     <tr>
-    <td><img src="https://github.com/JaberBabaki/LoRa-single-channel-gateway/blob/master/picture/4.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/LoRa-single-channel-gateway/blob/master/picture/4.jpg" width="250" height="400" /></td>
-    <td><img src="https://github.com/JaberBabaki/LoRa-single-channel-gateway/blob/master/picture/4.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/multi-channel-LoRa-gateway/blob/master/picture/2019-12-29_202823.jpg" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/multi-channel-LoRa-gateway/blob/master/picture/DR0_1497.JPG" width="250" height="400" /></td>
+    <td><img src="https://github.com/JaberBabaki/multi-channel-LoRa-gateway/blob/master/picture/DR0_1462.JPG" width="250" height="400" /></td>
   </tr>
 </table>
 
